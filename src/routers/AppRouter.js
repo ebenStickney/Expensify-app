@@ -24,7 +24,7 @@ const AppRouter = () => (
     component={CreatePage}
    />
    <Route 
-    path="/edit"
+    path="/edit/:id"
     component={EditPage}
    />
    <Route 
