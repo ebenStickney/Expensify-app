@@ -1,23 +1,45 @@
 import { createStore } from 'redux';
 
-const store = createStore((state = {count: 0},action ) => {
+const incrementCount = ({ incrementBy = 1} = {}) => ({
+    type: "INCREMENT", 
+    incrementBy
+});
+
+const decrementCount = ( {decrementBy = 1} = {} ) => ({
+    type: "DECREMENT",
+    decrementBy
+});
+
+const setCount = ( {count} = {} ) => ({  //no need for default, since it is required
+    type: "SET", 
+    count
+});
+
+const resetCount = () => ({
+    type: "RESET",
+})
+
+const store = createStore((state = {count: 0}, action ) => {
     switch (action.type) {
         case "INCREMENT": 
-          const incrementBy = typeof action.incrementBy === 'number'? action.incrementBy : 1;
           return {
-           count: state.count + incrementBy
+           count: state.count + action.incrementBy
        };
         break;
         case "DECREMENT":
-          const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
           return {
-           count: state.count - decrementBy
+           count: state.count - action.decrementBy
           };
         break;
         case "RESET": 
           return {
            count: 0
             };
+        break;
+        case "SET": 
+          return {
+            count: action.count
+          };
         break;
         default: 
           return state;
@@ -26,41 +48,24 @@ const store = createStore((state = {count: 0},action ) => {
 
 console.log(store.getState());
 
-store.dispatch({
-    type: "INCREMENT",
-    incrementBy: 5
-});
+store.dispatch(incrementCount({incrementBy: 5}));
 
 console.log(store.getState());
 
-store.dispatch({
-    type: "INCREMENT"
-});
+
+store.dispatch(decrementCount( {decrementBy: 3 } ));
 
 console.log(store.getState());
 
-store.dispatch({
-    type: "INCREMENT"
-});
+store.dispatch(resetCount());
 
 console.log(store.getState());
 
-store.dispatch({
-    type: "DECREMENT",
-    decrementBy: 3
-});
+store.dispatch(incrementCount());
 
 console.log(store.getState());
 
-store.dispatch({
-  type: "RESET"
-});
-
-console.log(store.getState());
-
-store.dispatch({
-    type: "INCREMENT"
-});
+store.dispatch(setCount( {count: 34} ));  //required, so just set the count
 
 console.log(store.getState());
 
