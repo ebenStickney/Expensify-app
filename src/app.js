@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from './routers/AppRouter'
+import { Provider } from 'react-redux';
+import AppRouter from './routers/AppRouter';
 import configureStore from './store/configure-store';
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
@@ -24,10 +25,14 @@ store.dispatch(setTextFilter( 'water'));
     
 
  
+const jsx = (
+    
+  <AppRouter />
+);
 
 
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+ReactDOM.render(jsx, document.getElementById('app'));
 
 
       
