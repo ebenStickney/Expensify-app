@@ -27,7 +27,9 @@ store.dispatch(setTextFilter( 'water'));
  
 const jsx = (
     
-  <AppRouter />
+  <Provider store={store}> 
+    <AppRouter /> 
+  </Provider>
 );
 
 

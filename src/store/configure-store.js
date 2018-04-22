@@ -13,9 +13,3 @@ export default () => {
  return store;   
 }
 //store creation
-const store = createStore(
-    combineReducers({
-        expenses: expenseReducer,
-        filters: filtersReducer
-      })
-    );
