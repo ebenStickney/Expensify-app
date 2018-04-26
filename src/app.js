@@ -14,9 +14,10 @@ import './styles/style.scss';
 const store = configureStore();
 
 store.dispatch(addExpense( { description: 'Water bill', amount: 20000 }));
-store.dispatch(addExpense( { description: 'Gas bill', amount: 15000 }));
+store.dispatch(addExpense( { description: 'Rent', amount: 109500, createdAt: 1000 }));
+store.dispatch(addExpense( { description: 'Gas bill', amount: 135000 }));
 
-store.dispatch(setTextFilter( 'bill'));
+
 
 
      const state = store.getState();
