@@ -17,11 +17,11 @@ export default (state = expenseReducerDefaultState, action) => {
         return state.map((expense) => {
             if (expense.id === action.id) {
               return {
-                  ...expenses, 
+                  ...expense, 
                   ...action.updates
               }  
             } else {
-                return expenses;
+                return expense;
             }
         });
         break; 

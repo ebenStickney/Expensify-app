@@ -31,11 +31,11 @@ const ExpenseListFilters = (props) => (
 );
 
 
-const mapStatetoProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         filters: state.filters
     }
 };
 
 
-export default connect(mapStatetoProps)(ExpenseListFilters);
+export default connect(mapStateToProps)(ExpenseListFilters);
