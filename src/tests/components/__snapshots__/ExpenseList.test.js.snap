@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Expense list with expenses 1`] = `
+<div>
+  <ExpenseListItem
+    amount={12939}
+    createdAt={0}
+    description="water bill"
+    id="1"
+    key="1"
+    note=""
+  />
+  <ExpenseListItem
+    amount={1234}
+    createdAt={-86400000}
+    description="power bill"
+    id="2"
+    key="2"
+    note="PGE"
+  />
+  <ExpenseListItem
+    amount={134234}
+    createdAt={86400000}
+    description="rent"
+    id="3"
+    key="3"
+    note="May, 2018"
+  />
+</div>
+`;
+
+exports[`should render ExpenseList with emtpy expense message 1`] = `
+<div>
+  <p>
+     no expenses listed 
+  </p>
+</div>
+`;
