@@ -56,4 +56,5 @@ test('should NOT set amount with invalid input', ()=> {
         target: { value }
     });
     expect(wrapper.state('amount')).toBe('');
+    expect(wrapper).toMatchSnapshot();
 });
