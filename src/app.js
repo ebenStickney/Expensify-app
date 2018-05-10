@@ -10,7 +10,6 @@ import 'normalize.css/normalize.css';
 import './styles/style.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
-
 const store = configureStore();
 
 store.dispatch(addExpense( { description: 'Water bill', amount: 20000 }));
