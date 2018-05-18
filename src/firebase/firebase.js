@@ -15,50 +15,43 @@ const config = {
 
   const database = firebase.database();
 
-  database.ref('traits/dopeness').set('eh..okay')
+  export { firebase, database as default }; 
 
-  database.ref().on('value', (snapshot) => {
-    const val = snapshot.val();
-    console.log(`${val.name} could be described as ${val.traits.dopeness}.`);
-  });
+  // database.ref('expenses').on('child_changed', (snapshot) => {
+  //   console.log(snapshot.key, snapshot.val());
+  // })
+  //
+  // // database.ref('expenses').on('value', (snapshot) => {
+  // //   const expenses = [];
+  // //   snapshot.forEach( (childSnapshot) => {
+  // //     expenses.push( {
+  // //       id: childSnapshot.key,
+  // //       ...childSnapshot
+  // //     })
+  // //   })
+  // //   console.log(expenses);
+  // // });
+  //
+  // setTimeout( ()=> {
+  //   database.ref('expenses/-LCjsBemcnZmppkjDNoE').update({description: 'yo mama'});
+  // }, 3000);
 
- setTimeout( () => {
-   database.ref().update({'traits/dopeness': 'dope, level midnight'});
- }, 7000);
-
-  // database.ref()
+  // database.ref('expenses')
   // .once('value')
   // .then( (snapshot) => {
-  //   const val = snapshot.val();
-  //   console.log(val);
+  //   const expenses = [];
+  //   snapshot.forEach( (childSnapshot) => {
+  //     expenses.push({
+  //       id: childSnapshot.key,
+  //       ...childSnapshot.val()
+  //     })
+  //       })
+  //       console.log(expenses);
   // })
-  // .catch( (e) => {
-  //   console.log('error:', e);
-  // });
-  //
-  // database.ref().set({
-  //   name: 'Eben',
-  //   age: 33,
-  //   location: {
-  //     city: 'Portland',
-  //     state: 'Oregon'
-  //   }
-  // })
-  // .then( () => {console.log('data passed')})
-  // .catch( (e) => {console.log('error', e)});
-  //
-  //
-  // // database.ref('traits').set({
-  // //   funny: true,
-  // //   single: false,
-  // //   desireToCode: 10
-  // // }).then( () => {console.log('data passed test!')})
-  // // .catch( (e) => {console.log('error!!', e)});
-  // //
-  // // database.ref('traits/single').remove()
-  // // .then( () => {console.log('Yo shit is gone')})
-  // // .catch( (e) => { console.log('naw, brah', e)});
-  // //
-  // // database.ref().update({'location/state': 'Maine', 'traits/desireToCode': 11})
-  // // .then( () => {console.log('Yo shit is updated')})
-  // // .catch( (e) => { console.log('naw, brah', e)});
+// database.ref('expenses').push({description: 'car', amount: 120.00, note: '', createdAt: 3692});
+//
+// database.ref('expenses').push({description: 'internet', amount: 150.00, note: '', createdAt: 34642});
+//
+// database.ref('expenses').push({description: 'rent', amount: 1500.00, note: '', createdAt: 340292});
+//
+// database.ref('expenses').push({description: 'food', amount: 400.00, note: '', createdAt: 76292});
