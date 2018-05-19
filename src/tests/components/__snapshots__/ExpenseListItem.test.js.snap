@@ -12,7 +12,7 @@ exports[`should render ExpenseListItem with single expense data 1`] = `
   </Link>
   <p>
     Amount:
-    $1,234.00
+    $12.34
     -- Created at:
     December 30th 1969
   </p>

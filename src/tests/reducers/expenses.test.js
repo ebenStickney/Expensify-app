@@ -18,14 +18,14 @@ test('should call add expense', () => {
         type: "ADD_EXPENSE",
         expenses: expense
     };
-    
+
     const state = expenseReducer(expenses, action);
     expect(state).toEqual([...expenses, expense ]);
 });
 
 test('should delete expense', () => {
     const action = {
-        type: "REMOVE_EXPENSE", 
+        type: "REMOVE_EXPENSE",
         id: expenses[1].id
     };
     const state = expenseReducer(expenses, action);
@@ -34,7 +34,7 @@ test('should delete expense', () => {
 
 test('should return same state, invalid delete expense', () => {
     const action = {
-        type: "REMOVE_EXPENSE", 
+        type: "REMOVE_EXPENSE",
         id: '4'
     };
     const state = expenseReducer(expenses, action);
@@ -44,7 +44,7 @@ test('should return same state, invalid delete expense', () => {
 test('should return edited expense', () => {
     const note = 'new note'
     const action = {
-        type: "EDIT_EXPENSE", 
+        type: "EDIT_EXPENSE",
         id: expenses[0].id,
         updates: {
             note
@@ -57,7 +57,7 @@ test('should return edited expense', () => {
 test('should not return edited expense', () => {
     const note = 'new note'
     const action = {
-        type: "EDIT_EXPENSE", 
+        type: "EDIT_EXPENSE",
         id: '494',
         updates: {
             note
@@ -65,4 +65,13 @@ test('should not return edited expense', () => {
     };
     const state = expenseReducer(expenses, action);
     expect(state).toEqual(expenses);
+});
+
+test('should set Expenses', () => {
+    const action = {
+    type: "SET_EXPENSES",
+    expenses: [expenses[1]]
+  };
+  const state = expenseReducer(expenses, action);
+  expect(state).toEqual([expenses[1]]);
 });
