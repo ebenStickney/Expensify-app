@@ -2,12 +2,12 @@ import React from 'react';
 import {Router, Route, Switch, Link, NavLink} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import ExpenseDashboardPage from "../components/Dashboard";
-import HelpPage from "../components/HelpPage";
 import CreateExpense from "../components/CreatePage";
 import EditPage from "../components/EditPage";
 import NotFoundPage from "../components/NotFound";
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export const history = createHistory();
 
@@ -15,7 +15,7 @@ const AppRouter = () => (
 <Router history={history}>
  <div>
   <Switch>
-    <Route
+    <PublicRoute
     path="/"
     component={LoginPage}
     exact={true}
@@ -27,10 +27,6 @@ const AppRouter = () => (
    <PrivateRoute
     path="/edit/:id"
     component={EditPage}
-   />
-   <PrivateRoute
-    path="/help"
-    component={HelpPage}
    />
    <PrivateRoute
     path="/dashboard"
