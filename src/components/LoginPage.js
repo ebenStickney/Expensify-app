@@ -6,9 +6,13 @@ import {startLogin} from '../actions/auth';
  //creating eventhandler for calling startLogin action
 export const LoginPage = ({ startLogin }) => {
   return (
-    <div>
-      <h2> Log In to Expensify </h2>
-        <button onClick={startLogin}> Log In </button>
+    <div className='box-layout'>
+      <div className='box-layout__box'>
+        <h1 className='box-layout__title'> Expensify </h1>
+        <p> Every penny counts. Every penny accounted for.</p>
+        <button onClick={startLogin} className='button'> Login With Google </button>
+      </div>
+
     </div>
 
   );
