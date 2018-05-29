@@ -82,6 +82,14 @@ export default class ExpenseForm extends React.Component {
                 value={this.state.amount}
                 onChange={this.onAmountChange}
               />
+              <div className='text-input'>
+                <select className='form__select' name='category'>
+                  <option value="Bills and Utilities"> Bills and Utilities </option>
+                  <option value="Food and Drink"> Food and Drink </option>
+                  <option value="Food and Drink"> Misc. </option>
+                  <option value="Food and Drink"> Entertainment </option>
+                </select>
+              </div>
               <SingleDatePicker
                 date={this.state.createdAt}
                 onDateChange={this.onDateChange}
